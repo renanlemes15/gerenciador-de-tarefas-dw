@@ -1,5 +1,6 @@
 package com.lemes.todolist.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,7 +15,12 @@ public class Tarefa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(nullable = false, length = 100)
     private String descricao;
+    
+    @Column(columnDefinition = "BOOLEAN DEFAULT true")
     private boolean concluida;
+    
+    @Column(nullable = false)    
     private int prioridade;
 }
