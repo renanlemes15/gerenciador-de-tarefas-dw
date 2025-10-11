@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface TarefaRepository extends JpaRepository<Tarefa, Long>{
     
-    public List<Tarefa> findByDescricao(String descricao);
+    public List<Tarefa> findByDescricaoContainingIgnoreCase(String descricao);
     
     public List<Tarefa> findByConcluida(boolean concluida);
 }
